@@ -1,11 +1,19 @@
+// import Body from "./components/Body";
+import Browse from "./components/Browse";
+import Login from "./components/Login";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
 
   return (
-    <>
-        <h1 className="text-3xl text-center text-red-500">Hello world</h1>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />}  />
+        <Route  path="/browse" element={<Browse/>}  />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
