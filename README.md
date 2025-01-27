@@ -8,3 +8,6 @@
 - Header 
 - Login/Sing-in-page
 - Sign-up(within sign-in)
+- Routing(little bit)
+- Form validation
+- 
