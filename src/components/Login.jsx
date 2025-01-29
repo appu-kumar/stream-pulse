@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import Header from "./Header";
-import { validateForm } from "../utility/formValidation";
+import { validateForm } from "../utils/formValidation";
 const LoginAndSignup = () => {
   const [toggleSignInForm, setToggleSignInForm] = useState(false);
   const [valid,setValid] = useState('');
@@ -17,8 +17,7 @@ const LoginAndSignup = () => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    const fullName = fullNameRef.current.value;
-    const result = validateForm(email,password,fullName);
+    const result = validateForm(email,password);
     setValid(result);
   }
 
