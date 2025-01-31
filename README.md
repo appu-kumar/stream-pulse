@@ -17,6 +17,8 @@
 - Deployment
 - Login/Signup validation
 - Configured react-redux and redux-toolkit
+- Impl redux, sign-up, sign-in, sign-out 
+
 
 # Deploying steps
 
@@ -30,6 +32,9 @@
 
 - 1. Create store eg. appStore.js, This store manages the state globally.
 - 2. Create Slice for a particular entity. eg. userSlice() this manages only user state okay. This create Two things automatically
+- 3. Connect the userSlice with react app
+- 4. Dispatch action  eg. dispatch(addUser(user))
+- 5. Subscribe to store eg. useSelector((state)=>state)
   - Without createSlice() we were creating actions and reducer separatally but now createSlice() generate both automatically.
   - 1. actions --> An action in Redux is a plain JavaScript object with a type field that describes what event occurred. It may also include a payload containing the necessary data.
   - const addUser = (user) => {
