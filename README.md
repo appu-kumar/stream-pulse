@@ -29,6 +29,7 @@
 - update stoe with movies data
 - plaining for maincontainer and secondary container
 - Fetch Data for Trailer video
+- Fetch Popular,latest,upcoming,top rated movies
 
 
 # Deploying steps

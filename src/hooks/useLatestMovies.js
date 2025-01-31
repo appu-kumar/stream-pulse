@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { addMovies } from "../utils/moviesSlice";
+import { addLatestMovies } from "../utils/moviesSlice";
 import { useDispatch } from "react-redux";
 import { options } from "../utils/constants";
 
@@ -10,7 +10,7 @@ const useLatestMovies = () =>{
     async function getAllLatestMovies() {
       const res = await fetch(url, options)
       const movies = await res.json();
-      dispatch(addMovies(movies));
+      dispatch(addLatestMovies(movies));
     }
   
     useEffect(() => {
