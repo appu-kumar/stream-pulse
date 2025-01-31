@@ -11,6 +11,7 @@ import { auth } from "../utils/firebase.js";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice.js";
 import { useNavigate } from "react-router-dom";
+import { AVATAR_LOGO } from "../utils/constants.js";
 
 const LoginAndSignup = () => {
   const [toggleSignInForm, setToggleSignInForm] = useState(false);
@@ -44,7 +45,7 @@ const LoginAndSignup = () => {
           // Signed up we can store the user info in redux state or context api
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: fullName, photoURL: "https://avatars.githubusercontent.com/u/83134946?s=40&v=4"
+            displayName: fullName, photoURL: AVATAR_LOGO
           }).then(() => {
             // Profile updated!
             console.log('usr',user);

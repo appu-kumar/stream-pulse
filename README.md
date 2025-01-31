@@ -18,6 +18,17 @@
 - Login/Signup validation
 - Configured react-redux and redux-toolkit
 - Impl redux, sign-up, sign-in, sign-out 
+- Fixbug: sign-out and sign-in 
+- Fixbug: Put the onAuthStateChanged in Header.js  If user is logged in and trying to go to login page it will redirect to browse page vice-versa
+- Create constants.js file to put all the static data.
+- TMDB (To get all the movies data)
+- Login in TMDB and get api access token 
+- Go to API references and get API don't miss to put token in constant file ok
+- Custom Hook for Now Playing movies
+- create movieSlice
+- update stoe with movies data
+- plaining for maincontainer and secondary container
+- Fetch Data for Trailer video
 
 
 # Deploying steps
