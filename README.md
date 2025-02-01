@@ -30,6 +30,13 @@
 - plaining for maincontainer and secondary container
 - Fetch Data for Trailer video
 - Fetch Popular,latest,upcoming,top rated movies
+- Add GPT button in Header.jsx
+- Create the GPT component to show movies
+- GPT search Bar
+- Make GPT search Bar in multi language
+- Attach the Google Gemni to Search movie
+- Call The APIs based on searched movie
+
 
 
 # Deploying steps

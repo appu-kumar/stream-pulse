@@ -11,7 +11,7 @@ import { auth } from "../utils/firebase.js";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice.js";
 import { useNavigate } from "react-router-dom";
-import { AVATAR_LOGO } from "../utils/constants.js";
+import { AVATAR_LOGO, BG_URL } from "../utils/constants.js";
 
 const LoginAndSignup = () => {
   const [toggleSignInForm, setToggleSignInForm] = useState(false);
@@ -34,7 +34,6 @@ const LoginAndSignup = () => {
     const result = validateForm(email, password);
     const fullName = toggleSignInForm && fullNameRef.current.value;
 
-    console.log('name',fullName)
 
     setValid(result);
 
@@ -48,7 +47,6 @@ const LoginAndSignup = () => {
             displayName: fullName, photoURL: AVATAR_LOGO
           }).then(() => {
             // Profile updated!
-            console.log('usr',user);
             const {uid,displayName,photoURL,email} = user;
             dispatch(addUser({uid,displayName,photoURL,email}));  // storing in store
             navigate("/browse")
@@ -83,10 +81,10 @@ const LoginAndSignup = () => {
   return (
     <div className="">
       <Header />
-      <div>
+      <div className="fixed">
         <img
-          className="h-full"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/7a8c0067-a424-4e04-85f8-9e25a49a86ed/web/IN-en-20250120-TRIFECTA-perspective_860a95da-c386-446e-af83-fef8ddd80803_small.jpg"
+          className=""
+          src={BG_URL}
           alt="background-img"
         />
       </div>

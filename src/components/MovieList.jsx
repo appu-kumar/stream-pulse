@@ -2,7 +2,7 @@
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
-  console.log("moviesss", movies && movies[0]?.poster_path);
+
   return (
     <div className="p-3">
       <h1 className="text-3xl mb-3">{title}</h1>
