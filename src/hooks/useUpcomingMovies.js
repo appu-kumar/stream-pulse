@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { addUpcomingsMovies } from "../utils/moviesSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { options } from "../utils/constants";
 
 const useUpcomingMovies = () =>{
+    const upcomingMovies = useSelector((store)=> store.movies.upcomingMovies)
     const url = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
     const dispatch = useDispatch();
   
@@ -14,7 +15,7 @@ const useUpcomingMovies = () =>{
     }
   
     useEffect(() => {
-      getAllUpcomingMovies();
+      !upcomingMovies && getAllUpcomingMovies();
     }, []);
 }
 

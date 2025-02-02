@@ -65,7 +65,7 @@ const Header = () => {
   return (
     <>
       <div className="sticky w-screen top-0 left-0 z-40 bg-gradient-to-t to-black flex items-center justify-between">
-        <img className="w-44 ml-5" src={LOGO} alt="logo-img" />
+        <img className="w-44  ml-5" src={LOGO} alt="logo-img" />
         {user && (
           <div className="flex items-center">
             {toggleSearch && (

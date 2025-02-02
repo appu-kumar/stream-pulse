@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { addLatestMovies } from "../utils/moviesSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { options } from "../utils/constants";
 
 const useLatestMovies = () =>{
+    const nowPlayingMovies = useSelector((store)=> store.movies.nowPlayingMoviesl)
     const url = "https://api.themoviedb.org/3/movie/now_playing?page=1";
     const dispatch = useDispatch();
   
@@ -14,7 +15,7 @@ const useLatestMovies = () =>{
     }
   
     useEffect(() => {
-      getAllLatestMovies();
+      !nowPlayingMovies && getAllLatestMovies();      // memoization if movielist is present in the store then why are u calling the api okay
     }, []);
 }
 

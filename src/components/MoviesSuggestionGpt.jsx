@@ -38,10 +38,10 @@ const MoviesSuggestionGpt = () => {
     <>
       <div className="relative z-10 text-white">
         {listOfMoviesByName &&
-          listOfMoviesByName.map((movieList) => (
+          listOfMoviesByName?.map((movieList,idx) => (
             <MovieList
-              key={movieList?.results?.[0].id}
-              title={movieList?.results?.[0].title}
+              key={idx}
+              title={movieList?.results?.[0]?.title}
               movies={movieList?.results}
             />
           ))}
