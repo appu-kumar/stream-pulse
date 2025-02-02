@@ -81,7 +81,7 @@ const LoginAndSignup = () => {
   return (
     <div className="">
       <Header />
-      <div className="fixed">
+      <div className="fixed top-0">
         <img
           className=""
           src={BG_URL}
