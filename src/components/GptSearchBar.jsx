@@ -11,8 +11,9 @@ const GptSearchBar = () => {
   const inputRef = useRef(null);
 
   const handleOnClick = async () => {
-    const query = `Give me an array of the top searched comedy movie titles only.
-Format the response strictly as a  array of strings without any extra text. ${inputRef.current.value}`;
+    const query = `Provide an array of movie titles related to the search query: "${inputRef.current.value}". 
+    Return only a JavaScript array in this format: ["Movie1", "Movie2", "Movie3", ...]. 
+    Do not include explanations, extra text, or JSON notation. Just return the array directly.`;
     try {
       const response = await fetch(
         "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=" +

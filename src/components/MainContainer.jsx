@@ -10,10 +10,10 @@ const MainContainer = () => {
   return (
     <div>
       <VideoTitle
-        overview={movies.results[0].overview}
-        title={movies.results[0].title}
+        overview={movies?.results?.[0]?.overview}
+        title={movies?.results?.[0]?.title}
       />
-      <VideoBackground movieId={movies.results[0].id} />
+      <VideoBackground movieId={movies?.results?.[0]?.id} />
     </div>
   );
 };

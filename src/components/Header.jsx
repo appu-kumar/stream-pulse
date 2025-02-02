@@ -9,6 +9,10 @@ import { LOGO } from "../utils/constants";
 import { toggleGptSearch } from "../utils/GPTSearchSlice";
 import { SUPPORTED_LANG } from "../utils/constants";
 import { addLanguage } from "../utils/langSlice";
+import {
+  removeGptSearchedMovies,
+  removeGptListMoviesByName,
+} from "../utils/moviesSlice";
 
 // Header is called in every path that is why onAuthStateChanged write here.
 const Header = () => {
@@ -37,9 +41,12 @@ const Header = () => {
   }, [dispatch]);
 
   const handleSignOut = () => {
+   
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
+        // Sign-out successful. clear the searched movie and list of teh movies according to search
+        dispatch(removeGptSearchedMovies());
+        dispatch(removeGptListMoviesByName());
       })
       .catch((error) => {
         // An error happened.
@@ -57,7 +64,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="absolute w-screen top-0 left-0 z-10 bg-gradient-to-t to-black flex items-center justify-between">
+      <div className="sticky w-screen top-0 left-0 z-40 bg-gradient-to-t to-black flex items-center justify-between">
         <img className="w-44 ml-5" src={LOGO} alt="logo-img" />
         {user && (
           <div className="flex items-center">

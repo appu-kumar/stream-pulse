@@ -30,8 +30,14 @@ const movieSlice = createSlice({
     addGptSearchedMovies:(state,action) => {
       state.gptSearchedMovie=action.payload;
     },
+    removeGptSearchedMovies:(state) => {
+      state.gptSearchedMovie=null;
+    },
     addGptListMoviesByName:(state,action) => {
       state.gptListMoviesByName = action.payload;
+    },
+    removeGptListMoviesByName:(state) => {
+      state.gptListMoviesByName = null;
     }
   },
 });
@@ -44,5 +50,7 @@ export const {
   addUpcomingsMovies,
   addGptSearchedMovies,
   addGptListMoviesByName,
+  removeGptListMoviesByName,
+  removeGptSearchedMovies
 } = movieSlice.actions;
 export default movieSlice.reducer;
